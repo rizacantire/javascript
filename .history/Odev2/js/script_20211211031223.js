@@ -46,21 +46,15 @@ function newItem(item) {
     listElement.appendChild(deleteButton);
     listDom.appendChild(listElement);
 }
-function change(target){
-        let line = target.style;
-        let targetClassList = target.classList;
-        let isActive = targetClassList.value.search("active");
-        isActive == -1
-            ? (target.classList.add("active"), (line.textDecoration = "line-through"))
-            : (target.classList.remove("active"), (line.textDecoration = ""));
-}
 function test(e){
     changeCss(e)
-    let target = e.target
-    if(target.querySelector("span")==null){
-        change(e.target.parentNode)    
+    let a = e.target
+    if(a.querySelector("span")==null){
+        console.log("boş")
+
+        changeCss(e.target.parentNode.parentNode)
     }
-    
+    console.log()
     
 }
 

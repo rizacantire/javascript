@@ -11,7 +11,7 @@ function changeCss(e) {
         ? (e.target.classList.add("active"), (line.textDecoration = "line-through"))
         : (e.target.classList.remove("active"), (line.textDecoration = ""));
 }
-// listDom.addEventListener("click", changeCss);
+listDom.addEventListener("click", changeCss);
 let deleteButton;
 let toDO 
 function deleteListItem(e) {
@@ -37,30 +37,17 @@ createToDoList(toDoList)
 function newItem(item) {
     listElement = document.createElement("li");
     listElement.classList.add("list-group-item");
+    listElement.onclick = test(e)
     deleteButton = document.createElement("button");
     deleteButton.classList.add("close", "mt-3", "mr-3", "delete");
     deleteButton.innerHTML = "x";
     deleteButton.addEventListener("click", deleteListItem);
-    listElement.onclick = test
     listElement.innerHTML = "<span>"+ item +"</span>";
     listElement.appendChild(deleteButton);
     listDom.appendChild(listElement);
 }
-function change(target){
-        let line = target.style;
-        let targetClassList = target.classList;
-        let isActive = targetClassList.value.search("active");
-        isActive == -1
-            ? (target.classList.add("active"), (line.textDecoration = "line-through"))
-            : (target.classList.remove("active"), (line.textDecoration = ""));
-}
 function test(e){
-    changeCss(e)
-    let target = e.target
-    if(target.querySelector("span")==null){
-        change(e.target.parentNode)    
-    }
-    
+    console.log(e)
     
 }
 

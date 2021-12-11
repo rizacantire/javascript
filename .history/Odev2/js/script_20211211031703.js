@@ -4,6 +4,7 @@ let toDoList = ["3 Litre Su İç","Ödevleri Yap",
 
 let listElement = document.createElement("li","span");
 function changeCss(e) {
+    console.log(e.target)
     let line = e.target.style;
     let targetClassList = e.target.classList;
     let isActive = targetClassList.value.search("active");
@@ -46,21 +47,14 @@ function newItem(item) {
     listElement.appendChild(deleteButton);
     listDom.appendChild(listElement);
 }
-function change(target){
-        let line = target.style;
-        let targetClassList = target.classList;
-        let isActive = targetClassList.value.search("active");
-        isActive == -1
-            ? (target.classList.add("active"), (line.textDecoration = "line-through"))
-            : (target.classList.remove("active"), (line.textDecoration = ""));
-}
 function test(e){
     changeCss(e)
-    let target = e.target
-    if(target.querySelector("span")==null){
-        change(e.target.parentNode)    
+    let a = e.target
+    if(a.querySelector("span")==null){
+        console.log("eee: ",e.target)
+
     }
-    
+    console.log()
     
 }
 

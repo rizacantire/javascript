@@ -46,18 +46,18 @@ function newItem(item) {
     listElement.appendChild(deleteButton);
     listDom.appendChild(listElement);
 }
-function change(target){
-        let line = target.style;
-        let targetClassList = target.classList;
+function change(bebe){
+        let line = bebe.style;
+        let targetClassList = bebe.classList;
         let isActive = targetClassList.value.search("active");
         isActive == -1
-            ? (target.classList.add("active"), (line.textDecoration = "line-through"))
-            : (target.classList.remove("active"), (line.textDecoration = ""));
+            ? (bebe.classList.add("active"), (line.textDecoration = "line-through"))
+            : (bebe.classList.remove("active"), (line.textDecoration = ""));
 }
 function test(e){
     changeCss(e)
-    let target = e.target
-    if(target.querySelector("span")==null){
+    let a = e.target
+    if(a.querySelector("span")==null){
         change(e.target.parentNode)    
     }
     
